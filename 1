@@ -1,0 +1,70 @@
+\\main
+#include "mainwindow.h"
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
+}
+mainwindow.h
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QTimer>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private:
+    Ui::MainWindow *ui;
+
+    int counter = 0;
+    int timeValue = 0;
+    QTimer *timer;
+};
+
+mainwindow.cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    // Таймер
+    timer = new QTimer(this);
+
+    connect(timer, &QTimer::timeout, this, [=]() {
+        timeValue++;
+        ui->labelTimer->setText(QString::number(timeValue));
+    });
+
+    timer->start(1000); // 1 секунда
+
+    // Кнопка-счётчик
+    connect(ui->pushButton, &QPushButton::clicked, this, [=]() {
+        counter++;
+        ui->labelCounter->setText(QString::number(counter));
+    });
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+#endif // MAINWINDOW_H
