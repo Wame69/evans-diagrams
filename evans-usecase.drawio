@@ -1,0 +1,132 @@
+<mxGraphModel dx="1434" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <!-- System Box -->
+    <mxCell id="system-box" value="Evans" style="shape=rectangle;whiteSpace=wrap;html=1;strokeColor=#333;fillColor=#e6f2ff;strokeWidth=2;" parent="1" vertex="1">
+      <mxGeometry x="100" y="50" width="600" height="400" as="geometry"/>
+    </mxCell>
+
+    <!-- Actors -->
+    <mxCell id="user-actor" value="User" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;fillColor=#fff2cc;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="20" y="150" width="30" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="programmer-actor" value="Programmer" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;fillColor=#fff2cc;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="750" y="150" width="30" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- Use Cases inside system -->
+    <mxCell id="uc1" value="Запуск программы" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="150" y="80" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="uc2" value="Запись голоса" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="350" y="80" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="uc3" value="Самонастройка голоса" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="150" y="140" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="uc4" value="Изменение количества записей программ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="350" y="140" width="220" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="uc5" value="Добавление функционала" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="350" y="200" width="160" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="uc6" value="Анимация" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="150" y="200" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="uc7" value="Вход в систему" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333;" parent="1" vertex="1">
+      <mxGeometry x="150" y="260" width="140" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- Relationships from User -->
+    <mxCell id="rel-user-uc1" value="использует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="user-actor" target="uc1" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="50" y="180" as="sourcePoint"/>
+        <mxPoint x="150" y="100" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-user-uc3" value="использует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="user-actor" target="uc3" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="50" y="180" as="sourcePoint"/>
+        <mxPoint x="150" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-user-uc6" value="использует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="user-actor" target="uc6" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="50" y="180" as="sourcePoint"/>
+        <mxPoint x="150" y="220" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Relationships from Programmer -->
+    <mxCell id="rel-prog-uc4" value="реализует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="programmer-actor" target="uc4" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="750" y="180" as="sourcePoint"/>
+        <mxPoint x="570" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-prog-uc5" value="реализует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="programmer-actor" target="uc5" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="750" y="180" as="sourcePoint"/>
+        <mxPoint x="510" y="220" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-prog-uc7" value="реализует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="programmer-actor" target="uc7" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="750" y="180" as="sourcePoint"/>
+        <mxPoint x="290" y="280" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Internal relationships -->
+    <mxCell id="rel-uc1-uc2" value="использует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc1" target="uc2" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="290" y="100" as="sourcePoint"/>
+        <mxPoint x="350" y="100" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-uc2-uc3" value="реализует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc2" target="uc3" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="490" y="100" as="sourcePoint"/>
+        <mxPoint x="290" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-uc3-uc4" value="связан с" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc3" target="uc4" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="290" y="160" as="sourcePoint"/>
+        <mxPoint x="570" y="160" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-uc4-uc5" value="реализует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc4" target="uc5" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="160" as="sourcePoint"/>
+        <mxPoint x="510" y="220" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-uc5-uc6" value="связан с" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc5" target="uc6" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="510" y="220" as="sourcePoint"/>
+        <mxPoint x="290" y="220" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="rel-uc6-uc7" value="реализует" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc6" target="uc7" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="290" y="220" as="sourcePoint"/>
+        <mxPoint x="290" y="280" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Call + ID box -->
+    <mxCell id="call-id-box" value="Call + ID" style="shape=rectangle;whiteSpace=wrap;html=1;strokeColor=#333;fillColor=#ffffff;" parent="1" vertex="1">
+      <mxGeometry x="150" y="320" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="rel-uc6-callid" value="" style="endArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;" parent="1" source="uc6" target="call-id-box" edge="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="290" y="240" as="sourcePoint"/>
+        <mxPoint x="220" y="340" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
